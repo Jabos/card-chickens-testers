@@ -5,288 +5,201 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card Chickens - Beta en Google Play</title>
     <link rel="icon" type="image/png" href="icon.png">
-    <meta name="theme-color" content="#131422">
-    <meta name="description" content="Únete a la prueba cerrada de Card Chickens en Google Play. ¡Sé de los primeros en jugar!">
+    <meta name="theme-color" content="#141417">
     <style>
-        :root {
-            --bg-color: #0e0f1a;
-            --card-bg: rgba(26, 28, 48, 0.88);
-            --card-border: rgba(255, 215, 0, 0.22);
-            --gold: #ffbe26;
-            --gold-glow: rgba(255, 190, 38, 0.45);
-            --green: #10b981;
-            --green-glow: rgba(16, 185, 129, 0.4);
-            --blue: #3b82f6;
-            --blue-glow: rgba(59, 130, 246, 0.4);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
         body {
-            background: var(--bg-color);
-            background-image: 
-                radial-gradient(circle at 50% 10%, rgba(120, 60, 220, 0.22) 0%, transparent 55%),
-                radial-gradient(circle at 80% 90%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 20% 80%, rgba(255, 190, 38, 0.12) 0%, transparent 45%);
-            background-attachment: fixed;
-            color: var(--text-main);
+            background-color: #121316;
+            color: #e5e5e5;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             padding: 24px 16px;
         }
 
-        .container {
+        .box {
             width: 100%;
-            max-width: 520px;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 28px;
-            padding: 36px 24px;
-            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(14px);
+            max-width: 440px;
+            background: #1c1d22;
+            border: 2px solid #2e3038;
+            padding: 32px 24px;
             text-align: center;
-            animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(18px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logo-wrap {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        .logo-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 24px;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), 0 0 25px var(--gold-glow);
-            border: 2px solid rgba(255, 190, 38, 0.6);
+        .icon {
+            width: 96px;
+            height: 96px;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            border: 2px solid #2e3038;
             display: block;
+            margin: 0 auto 16px;
+            background: #000;
         }
 
-        .badge {
+        .tag {
             display: inline-block;
-            padding: 6px 14px;
-            background: rgba(255, 190, 38, 0.14);
-            border: 1px solid rgba(255, 190, 38, 0.4);
-            color: var(--gold);
-            font-size: 0.78rem;
+            background: #262830;
+            color: #f5b700;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.08em;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            border-radius: 999px;
-            margin-bottom: 14px;
+            padding: 4px 8px;
+            margin-bottom: 12px;
+            border: 1px solid #383a45;
         }
 
         h1 {
-            font-size: 2.1rem;
+            font-size: 24px;
             font-weight: 800;
-            letter-spacing: -0.02em;
             color: #ffffff;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
         }
 
-        .subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
+        .desc {
+            font-size: 14px;
+            color: #9da1b0;
+            line-height: 1.4;
             margin-bottom: 28px;
-            line-height: 1.45;
         }
 
-        .steps-box {
+        .actions {
             display: flex;
             flex-direction: column;
             gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .step-card {
+            background: #15161a;
+            border: 1px solid #2e3038;
+            padding: 16px;
             text-align: left;
-            margin-bottom: 28px;
         }
 
-        .step-item {
-            background: rgba(14, 15, 26, 0.65);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            padding: 16px 18px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .step-item:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .step-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .step-num {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .step-label {
+            font-size: 11px;
             font-weight: 700;
-            font-size: 0.95rem;
-            flex-shrink: 0;
+            color: #f5b700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
         }
 
-        .step-item:nth-child(1) .step-num {
-            background: var(--green);
-            box-shadow: 0 0 14px var(--green-glow);
-        }
-
-        .step-item:nth-child(2) .step-num {
-            background: var(--blue);
-            box-shadow: 0 0 14px var(--blue-glow);
-        }
-
-        .step-text h3 {
-            font-size: 1.05rem;
-            color: #fff;
-            font-weight: 700;
-        }
-
-        .step-text p {
-            font-size: 0.83rem;
-            color: var(--text-muted);
+        .step-desc {
+            font-size: 13px;
+            color: #b0b4c3;
+            margin-bottom: 12px;
             line-height: 1.35;
-            margin-top: 2px;
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            display: block;
             width: 100%;
-            padding: 14px 20px;
-            border-radius: 14px;
-            font-size: 0.98rem;
+            padding: 12px 14px;
+            font-size: 14px;
             font-weight: 700;
             text-decoration: none;
-            cursor: pointer;
-            transition: all 0.2s ease;
             text-align: center;
-            border: none;
+            cursor: pointer;
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0 #000;
+            transition: transform 0.1s ease, box-shadow 0.1s ease;
+        }
+
+        .btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 #000;
         }
 
         .btn-green {
-            background: linear-gradient(135deg, #10b981, #059669);
-            color: #ffffff;
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+            background: #10b981;
+            color: #000000;
         }
 
         .btn-green:hover {
-            filter: brightness(1.1);
-            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
-            transform: translateY(-1px);
+            background: #059669;
+            color: #ffffff;
         }
 
         .btn-blue {
-            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            background: #3b82f6;
             color: #ffffff;
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
         }
 
         .btn-blue:hover {
-            filter: brightness(1.1);
-            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.5);
-            transform: translateY(-1px);
+            background: #2563eb;
         }
 
-        .faq {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            padding: 16px;
-            font-size: 0.82rem;
-            color: var(--text-muted);
-            line-height: 1.5;
+        .notice {
+            background: #15161a;
+            border-left: 3px solid #f5b700;
+            padding: 10px 12px;
+            font-size: 12px;
+            color: #8c909e;
             text-align: left;
+            line-height: 1.4;
         }
 
-        .faq strong {
-            color: #e5e7eb;
+        .notice strong {
+            color: #d1d5db;
         }
 
         footer {
-            margin-top: 22px;
-            font-size: 0.78rem;
-            color: #6b7280;
+            margin-top: 24px;
+            font-size: 12px;
+            color: #555866;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="logo-wrap">
-            <img class="logo-img" src="icon.png" alt="Card Chickens Icon">
-        </div>
-
+    <div class="box">
+        <img class="icon" src="icon.png" alt="Card Chickens Icon">
+        
         <div>
-            <span class="badge">Google Play • Beta Cerrada</span>
+            <span class="tag">Android • Beta Cerrada</span>
         </div>
 
         <h1>Card Chickens</h1>
-        <p class="subtitle">Sigue estos 2 sencillos pasos para probar el juego gratis desde Google Play Store:</p>
+        <p class="desc">Sigue estos dos pasos para instalar la versión de prueba desde Google Play.</p>
 
-        <div class="steps-box">
+        <div class="actions">
             <!-- PASO 1 -->
-            <div class="step-item">
-                <div class="step-header">
-                    <div class="step-num">1</div>
-                    <div class="step-text">
-                        <h3>Únete al grupo de evaluadores</h3>
-                        <p>Google requiere que tu cuenta esté en la lista de testers para habilitarte la descarga.</p>
-                    </div>
-                </div>
+            <div class="step-card">
+                <div class="step-label">Paso 1</div>
+                <div class="step-desc">Únete al grupo de evaluadores para que la Play Store te habilite el acceso:</div>
                 <a href="https://groups.google.com/g/card-chickens-testers" target="_blank" class="btn btn-green">
-                    👥 Unirse al Grupo de Google
+                    Unirse al Grupo de Google
                 </a>
             </div>
 
             <!-- PASO 2 -->
-            <div class="step-item">
-                <div class="step-header">
-                    <div class="step-num">2</div>
-                    <div class="step-text">
-                        <h3>Descarga en Google Play</h3>
-                        <p>Acepta la invitación de tester y presiona descargar en la Play Store.</p>
-                    </div>
-                </div>
+            <div class="step-card">
+                <div class="step-label">Paso 2</div>
+                <div class="step-desc">Acepta la invitación en Google Play e instala el juego en tu dispositivo:</div>
                 <a href="https://play.google.com/apps/testing/com.electrikey.cardchickens" target="_blank" class="btn btn-blue">
-                    ▶️ Descargar en Google Play
+                    Descargar en Google Play
                 </a>
             </div>
         </div>
 
-        <div class="faq">
-            💡 <strong>Nota importante:</strong> Asegúrate de entrar a ambos enlaces usando la <strong>misma cuenta de Google</strong> que tienes configurada en tu celular Android.
+        <div class="notice">
+            <strong>Importante:</strong> Entra a ambos enlaces usando la misma cuenta de Google que tienes activa en tu teléfono.
         </div>
 
         <footer>
-            Electrikey © 2026 • Card Chickens
+            Electrikey
         </footer>
     </div>
 
